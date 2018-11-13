@@ -40,4 +40,12 @@ public class BenchMarkEx2 {
         }
     }
 
+    @Benchmark
+    public void test_final(Blackhole blackhole) {
+        for (int i = 0; i < 100; i++) {
+            int result = Exercice2.my_fibonacci_final(param);
+            blackhole.consume(result);
+        }
+    }
+
 }

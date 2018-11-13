@@ -21,6 +21,14 @@ public class Exercice2 {
         return (i < 3) ? i : fibonacci(i - 1) + fibonacci(i - 2);
     }
 
+    public static final int my_fibonacci_final(final int i) {
+        if (i < 0) {
+            throw new IllegalArgumentException("Invalid input value");
+        }
+
+        return (i < 3) ? i : fibonacci(i - 1) + fibonacci(i - 2);
+    }
+
 
     public static int my_fibonacci_for(final int i) {
         if (i < 0) {
