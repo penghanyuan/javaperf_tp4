@@ -12,4 +12,12 @@ public class Exercice2 {
 
         return (i < 3) ? i : fibonacci(i - 1) + fibonacci(i - 2);
     }
+
+    public static int my_fibonacci(final int i) {
+        if (i < 0) {
+            throw new IllegalArgumentException("Invalid input value");
+        }
+
+        return (i < 3) ? i : fibonacci(i - 1) + fibonacci(i - 2);
+    }
 }
