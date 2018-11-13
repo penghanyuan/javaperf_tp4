@@ -64,11 +64,11 @@ public class Exercice1 {
     public static float[][] my_multiply2(final int[][] matrix) {
         final float[][] result = new float[7][7];
 
-        for (Integer i = 0; i < 7; i = i + 1)
-            for (Integer j = 0; j < 7; j = j + 1) {
+        for (int i = 0; i < 7; i = i + 1)
+            for (int j = 0; j < 7; j = j + 1) {
                 float currentValue = 0F;
 
-                for (Integer k = 0; k < 7; k = k + 1) {
+                for (int k = 0; k < 7; k = k + 1) {
                     currentValue = currentValue + matrix[i][k] * MATRIX_B[k][j];
                 }
 
