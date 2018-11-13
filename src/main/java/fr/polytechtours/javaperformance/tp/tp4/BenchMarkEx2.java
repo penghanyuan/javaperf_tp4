@@ -12,11 +12,13 @@ import java.util.concurrent.TimeUnit;
 @Fork(value = 2)
 public class BenchMarkEx2 {
 
+    @Param({"20","30"})
+    int param;
     @Benchmark
 
     public void testOrigin(Blackhole blackhole) {
-        for (int i = 0; i < 10; i++) {
-            int result = Exercice2.fibonacci(43);
+        for (int i = 0; i < 100; i++) {
+            int result = Exercice2.fibonacci(param);
             blackhole.consume(result);
         }
 
@@ -24,17 +26,18 @@ public class BenchMarkEx2 {
 
     @Benchmark
     public void testInteger2int(Blackhole blackhole) {
-        for (int i = 0; i < 10; i++) {
-            int result = Exercice2.my_fibonacci(43);
+        for (int i = 0; i < 100; i++) {
+            int result = Exercice2.my_fibonacci(param);
             blackhole.consume(result);
         }
     }
 
-//    @Benchmark
-//    public void testFloat2float_Integer2int(Blackhole blackhole) {
-//        for (int i = 0; i < 1000; i++) {
-//            float[][] result = Exercice1.my_multiply2(matrix);
-//            blackhole.consume(result);
-//        }
-//    }
+    @Benchmark
+    public void test_for(Blackhole blackhole) {
+        for (int i = 0; i < 100; i++) {
+            int result = Exercice2.my_fibonacci_for(param);
+            blackhole.consume(result);
+        }
+    }
+
 }

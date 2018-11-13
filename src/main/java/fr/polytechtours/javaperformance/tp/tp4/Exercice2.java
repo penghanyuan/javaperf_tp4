@@ -20,4 +20,19 @@ public class Exercice2 {
 
         return (i < 3) ? i : fibonacci(i - 1) + fibonacci(i - 2);
     }
+
+
+    public static int my_fibonacci_for(final int i) {
+        if (i < 0) {
+            throw new IllegalArgumentException("Invalid input value");
+        }
+        int result = 1;
+        int[] temp = new int[100];
+        temp[0] = 1;
+        temp[1] = 1;
+        for (int j = 2; j <= i; j++) {
+            temp[j] = temp[j - 2] + temp[j - 1];
+        }
+        return temp[i];
+    }
 }
