@@ -47,4 +47,12 @@ public class BenchMark {
             blackhole.consume(result);
         }
     }
+
+    @Benchmark
+    public void testFloat2float_out(Blackhole blackhole) {
+        for (int i = 0; i < 1000; i++) {
+            float[][] result = Exercice1.my_multiply2_out(matrix);
+            blackhole.consume(result);
+        }
+    }
 }

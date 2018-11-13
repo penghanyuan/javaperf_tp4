@@ -77,4 +77,22 @@ public class Exercice1 {
 
         return result;
     }
+
+    public static float[][] my_multiply2_out(final int[][] matrix) {
+        final float[][] result = new float[7][7];
+        float currentValue;
+        for (int i = 0; i < 7; i = i + 1)
+            for (int j = 0; j < 7; j = j + 1) {
+                currentValue = 0F;
+
+                for (int k = 0; k < 7; k = k + 1) {
+                    currentValue = currentValue + matrix[i][k] * MATRIX_B[k][j];
+                }
+
+                result[i][j] = currentValue;
+            }
+
+        return result;
+    }
+
 }
