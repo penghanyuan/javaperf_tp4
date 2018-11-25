@@ -23,7 +23,6 @@ public class BenchMark {
     };
 
     @Benchmark
-
     public void testOrigin(Blackhole blackhole) {
         for (int i = 0; i < 1000; i++) {
             float[][] result = Exercice1.multiply(matrix);
@@ -52,6 +51,14 @@ public class BenchMark {
     public void testFloat2float_out(Blackhole blackhole) {
         for (int i = 0; i < 1000; i++) {
             float[][] result = Exercice1.my_multiply2_out(matrix);
+            blackhole.consume(result);
+        }
+    }
+
+    @Benchmark
+    public void testFloat2float_remove(Blackhole blackhole) {
+        for (int i = 0; i < 1000; i++) {
+            float[][] result = Exercice1.my_multiply2_removecurrent(matrix);
             blackhole.consume(result);
         }
     }

@@ -95,4 +95,20 @@ public class Exercice1 {
         return result;
     }
 
+    public static float[][] my_multiply2_removecurrent(final int[][] matrix) {
+        final float[][] result = new float[7][7];
+        for (int i = 0; i < 7; i = i + 1)
+            for (int j = 0; j < 7; j = j + 1) {
+
+                for (int k = 0; k < 7; k = k + 1) {
+                    result[i][j] = result[i][j] + matrix[i][k] * MATRIX_B[k][j];
+                }
+
+//                result[i][j] = currentValue;
+            }
+
+        return result;
+    }
+
+
 }
