@@ -18,7 +18,7 @@ public class Exercice3b {
 
     private synchronized void incrementCounter(final Integer modulo) {
         synchronized (MUTEX) {
-            count = (count + 1) % modulo;
+             count = (count + 1) % modulo;
         }
     }
 
@@ -38,10 +38,14 @@ public class Exercice3b {
         }
 
         // Wait for it...
-        for (final Future<Runnable> future : futures) {
-            future.get();
+//        for (final Future<Runnable> future : futures) {
+//            future.get();
+//        }
+        service.shutdown();
+        while(true){
+            if (service.isTerminated()){
+                return count;
+            }
         }
-
-        return count;
     }
 }
